@@ -62,5 +62,36 @@ class Keyboard extends DeviceIn {
     }
 };
 
-let keyboard1 = new Keyboard("USB","HP")
-console.log(keyboard1.toString())
+//! CLASS FOR DISPLAY-MONITOR
+class Display {
+    
+    static countDisplay = 0;
+
+    constructor(brand, size){
+        this._idDisplay = ++Display.countDisplay;
+        this._brand = brand;
+        this._size = size;
+    }
+    get idDisplay(){
+        return this._idDisplay;
+    }
+
+    get brand(){
+        return this._brand;
+    }
+    set brand(newBrand){
+        this._brand = newBrand;
+    }
+
+    get size(){
+        return this._size;
+    }
+    set size(newSize){
+        this._size = newSize;
+    }
+
+    toString(){
+        return `DISPLAY-MONITOR >> [> idDisplay=${this._idDisplay}, BRAND=${this._brand}, SIZE-DISPLAY=${this._size} <]`
+    }
+};
+
