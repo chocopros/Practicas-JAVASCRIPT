@@ -114,6 +114,37 @@ class Computer {
     }
 };
 
+//! CLASS FOR ORDER COMPUTER
+
+class Orders {
+
+    static countOrders = 0;
+
+    constructor(){
+        this._idOrder = ++Orders.countOrders;
+        this._computer = [];  
+    }
+
+    get idOrders(){
+        return this._idOrder;
+    }
+
+    addComputer(addNewComputer){
+        this._computer.push(addNewComputer);
+    }
+
+    showOrder(){
+        let computersOrders = '';
+
+        for (let computer of this._computer){
+            computersOrders += `\n[${computer.toString()}]\n`;
+        }
+
+        return `Order=${this._idOrder}, ${computersOrders}`
+
+    }
+};
+
 //* CREATES OBJETS USING THE CLASS CREATED
 
 //> CREATE MOUSES
@@ -134,8 +165,17 @@ console.log(display1.toString())
 let display2 = new Display("HP","24-PULG")
 console.log(display2.toString())
 
-//* REGISTER FINAL 
-
-//> CREATE  FINAL REGISTER <<
+//> CREATE  FINAL REGISTER USING MOUSE; KEYBOARD AND DISPLAY <<
 let computer1 = new Computer("HP-775",display1,mouse1,keyboard1)
 console.log(computer1.toString())
+let computer2 = new Computer("HP-875",display2,mouse2,keyboard2)
+console.log(computer1.toString())
+
+
+//* RESULT FINAL PROYECT 
+
+//> CREATE OBJET TYPE ORDER
+let order1 = new Orders()
+order1.addComputer(computer1)
+order1.addComputer(computer2)
+console.log(order1.showOrder())
