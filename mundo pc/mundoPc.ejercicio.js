@@ -1,5 +1,7 @@
 //? APLICATION "MUNDO PC"
 
+//* CREATE ALL THE CLASS
+
 //! CLASS FOR TYPES OF INPUT DEVICES
 class DeviceIn {
 
@@ -39,7 +41,7 @@ class Mouse extends DeviceIn {
     }
 
     toString(){
-        return `Mouse: [idMouse=${this._idMouse}, typeIN=${this._typeIN}, Brand=${this._brand}]`;
+        return `MOUSE >> [> idMouse=${this._idMouse}, typeIN=${this._typeIN}, Brand=${this._brand} <]`;
     }
 };
 
@@ -58,7 +60,7 @@ class Keyboard extends DeviceIn {
     }
 
     toString(){
-        return `Keyboard: [idKeyboard=${this._idKeyboard}, typeIN=${this._typeIN}, Brand=${this._brand}]`;
+        return `KEYBOARD >> [> idKeyboard=${this._idKeyboard}, typeIN=${this._typeIN}, Brand=${this._brand} <]`;
     }
 };
 
@@ -91,7 +93,49 @@ class Display {
     }
 
     toString(){
-        return `DISPLAY-MONITOR >> [> idDisplay=${this._idDisplay}, BRAND=${this._brand}, SIZE-DISPLAY=${this._size} <]`
+        return `DISPLAY >> [> idDisplay=${this._idDisplay}, BRAND=${this._brand}, SIZE-DISPLAY=${this._size} <]`
     }
 };
 
+//! CLASS FOR COMPUTER
+class Computer {
+    static countComputer = 0;
+
+    constructor(name, display, mouse, keyboard){
+        this._idComputer = ++Computer.countComputer;
+        this._name = name;
+        this._display = display;
+        this._mouse = mouse;
+        this._keyborad = keyboard;
+    }
+
+    toString(){
+        return `COMPUTER >> [> ID=${this._idComputer} >> NAME= ${this._name} <]\n${this._display}\n${this._mouse}\n${this._keyborad}`;
+    }
+};
+
+//* CREATES OBJETS USING THE CLASS CREATED
+
+//> CREATE MOUSES
+let mouse1 = new Mouse("USB","HP")
+console.log(mouse1.toString())
+let mouse2 = new Mouse("USB","RAZER")
+console.log(mouse2.toString())
+
+//> CREATE KEYBOARD
+let keyboard1 = new Keyboard("USB","HP")
+console.log(keyboard1.toString())
+let keyboard2 = new Keyboard("PS/2","Genius")
+console.log(keyboard2.toString())
+
+//> CREATE DISPLAY-MONITOR
+let display1 = new Display("ASUS","26-PULG")
+console.log(display1.toString())
+let display2 = new Display("HP","24-PULG")
+console.log(display2.toString())
+
+//* REGISTER FINAL 
+
+//> CREATE  FINAL REGISTER <<
+let computer1 = new Computer("HP-775",display1,mouse1,keyboard1)
+console.log(computer1.toString())
