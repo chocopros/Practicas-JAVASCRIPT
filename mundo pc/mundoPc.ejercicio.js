@@ -153,19 +153,19 @@ console.log(mouse1.toString())
 let mouse2 = new Mouse("USB","RAZER")
 console.log(mouse2.toString())
 
-//> CREATE KEYBOARD
+//> CREATE KEYBOARD'S
 let keyboard1 = new Keyboard("USB","HP")
 console.log(keyboard1.toString())
 let keyboard2 = new Keyboard("PS/2","Genius")
 console.log(keyboard2.toString())
 
-//> CREATE DISPLAY-MONITOR
+//> CREATE DISPLAY-MONITOR'S
 let display1 = new Display("ASUS","26-PULG")
 console.log(display1.toString())
 let display2 = new Display("HP","24-PULG")
 console.log(display2.toString())
 
-//> CREATE  FINAL REGISTER USING MOUSE; KEYBOARD AND DISPLAY <<
+//> CREATE  FINAL REGISTER USING [MOUSE; KEYBOARD AND DISPLAY] <<
 let computer1 = new Computer("HP-775",display1,mouse1,keyboard1)
 console.log(computer1.toString())
 let computer2 = new Computer("HP-875",display2,mouse2,keyboard2)
