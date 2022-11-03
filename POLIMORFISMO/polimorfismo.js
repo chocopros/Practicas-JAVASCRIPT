@@ -38,7 +38,7 @@ class Manager extends Employee {
         return `${super.details()},\nid_manager=${this._idManager} Departament:${this._departament}`
     }
 
-    details2 = () => {return `${super.details()},\nid_manager=${this._idManager} Departament:${this._departament}`}
+    
 };
 
 //* CREATE ALL OBJETS
@@ -57,6 +57,12 @@ function printer(type) {
 }
 console.log(printer(employee1))
 console.log(printer(employee1))
+
+
 //? OR
-let printer1 = (type) => type.details()
+let printer1 = (type) => {
+    return (type instanceof Manager) ? `Objet is type Manager: [${type.details()}]` : `objet isn't type Manager: [${type.details()}]`
+};
+
 console.log(printer1(employee1))
+console.log(printer1(manager1))
